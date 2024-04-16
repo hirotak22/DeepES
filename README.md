@@ -1,6 +1,17 @@
 # DeepES
-## Installation
-hoge
+## Requirements
+- python 3.9.19 (with following packages)
+  - numpy 1.26.4
+  - pandas 2.2.1
+  - pytorch 1.13.0
+  - biopython 1.83
+  - fair-esm 2.0.0
+
+By using `environment.yml`, you can build an anaconda environment exactly the same as this research.
+```
+conda env create -f environment.yml
+conda activate deepes
+```
 
 ## Program Usage
 ### Embed input protein sequences
