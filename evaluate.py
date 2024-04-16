@@ -124,6 +124,9 @@ def main():
     threshold = args.threshold
     duplication = args.duplication
     
+    os.makedirs(f'{output_dir}/mapping_result', exist_ok=True)
+    os.makedirs(f'{output_dir}/candidate_genes', exist_ok=True)
+
     rclass_list = [rclass_set.split(',') for rclass_set in rclass_list]
     
     for input_fname in os.listdir(input_dir):

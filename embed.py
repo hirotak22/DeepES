@@ -62,7 +62,6 @@ def embed(sequence_list, model, alphabet, batch_converter, batch_size, device):
     return torch.stack(embedding_vectors)
 
 def main():
-    
     args = arguments()
     input_dir = args.input_dir
     output_dir = args.output_dir
@@ -70,6 +69,9 @@ def main():
     batch_size = args.batch_size
     cuda = args.cuda
     cpu_num = args.cpu_num
+    
+    os.makedirs(f'{output_dir}/embedding_vector', exist_ok=True)
+    os.makedirs(f'{output_dir}/gene_table', exist_ok=True)
     
     device = set_device(cuda, cpu_num)
     
@@ -80,7 +82,7 @@ def main():
     
     for input_fname in os.listdir(input_dir):
         fasta_name = input_fname.split('.')[0]
-        if reuse and os.path.isfile(f'{output_dir}/{fasta_name}.pt'):
+        if reuse and os.path.isfile(f'{output_dir}/embedding_vector/{fasta_name}.pt'):
             continue
         sequence_list = load_fasta(f'{input_dir}/{input_fname}')
         sequence_list_filtered, gene_table = preprocess_sequences(sequence_list)

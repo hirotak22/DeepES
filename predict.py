@@ -74,6 +74,8 @@ def main():
     cuda = args.cuda
     cpu_num = args.cpu_num
     
+    os.makedirs(f'{output_dir}/inference', exist_ok=True)
+    
     device = set_device(cuda, cpu_num)
     
     unique_rclass_list = list(set(sum([rclass_set.split(',') for rclass_set in rclass_list], [])))
