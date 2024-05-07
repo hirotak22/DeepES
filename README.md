@@ -1,4 +1,5 @@
 # DeepES
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 DeepES is a deep learning-based framework for enzyme screening.
 DeepES can identify orphan enzyme candidate protiens by focusing on biosynthetic gene clusters and KEGG RClass.
 DeepES uses protein sequences as inputs and evaluate whether the input genes contain biosynthetic gene clusters of interest.
