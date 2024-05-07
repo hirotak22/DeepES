@@ -1,4 +1,8 @@
 # DeepES
+DeepES is a deep learning-based framework for enzyme screening.
+DeepES can identify orphan enzyme candidate protiens by focusing on biosynthetic gene clusters and KEGG RClass.
+DeepES uses protein sequences as inputs and evaluate whether the input genes contain biosynthetic gene clusters of interest.
+
 ## Requirements
 - python 3.9.19 (with following packages)
   - numpy 1.26.4
@@ -12,6 +16,10 @@ By using `environment.yml`, you can build an anaconda environment exactly the sa
 conda env create -f environment.yml
 conda activate deepes
 ```
+
+## Pretrained parameters
+The model weights are available at [Zotero](https://doi.org/10.5281/zenodo.11123900).
+Please download files and unzip.
 
 ## Program Usage
 ### Embed input protein sequences
@@ -56,3 +64,6 @@ python evaluate.py \
 - --window_size: Range of contiguous genes to be evaluated at a time. default:`10`
 - --threshold: Threshold to obtain candidate genes. default:`0.99`
 - --duplication: Whether to allow a single gene to be associated with multiple enzyme reactions. default:`False`
+
+## License
+DeepES is released under the [MIT License](LICENSE).
