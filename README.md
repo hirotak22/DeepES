@@ -67,5 +67,35 @@ python evaluate.py \
 - --threshold: Threshold to obtain candidate genes. default:`0.99`
 - --duplication: Whether to allow a single gene to be associated with multiple enzyme reactions. default:`False`
 
+## Test run
+You can test DeepES by running the above three commands in sequence.
+After the testrun, the following directory structure is created.
+```
+output
+├── candidate_genes
+│   └── sample_data.tsv
+├── embedding_vector
+│   └── sample_data.pt
+├── gene_table
+│   └── sample_data.tsv
+├── inference
+│   ├── sample_data_RC00004.npy
+│   ├── sample_data_RC00014.npy
+│   ├── sample_data_RC01053.npy
+│   └── sample_data_RC01923.npy
+└── mapping_result
+    └── sample_data.pkl
+```
+The result file is `output/candidate_genes/sample_data.tsv`:
+| score | window_idx | RC01053 | RC00004,RC00014 | RC01923 |
+| ----- | ---------- | ------- | --------------- | ------- |
+| 0.9999939003858481 | 0 | eco:b2261 | eco:b2260 | eco:b2262 |
+| 0.9999939003858481 | 1 | eco:b2261 | eco:b2260 | eco:b2262 |
+| 0.9999939003858481 | 2 | eco:b2261 | eco:b2260 | eco:b2262 |
+| 0.9999939003858481 | 3 | eco:b2261 | eco:b2260 | eco:b2262 |
+| 0.9999939003858481 | 4 | eco:b2261 | eco:b2260 | eco:b2262 |
+| 0.9999939003858481 | 5 | eco:b2261 | eco:b2260 | eco:b2262 |
+
+
 ## License
 DeepES is released under the [MIT License](LICENSE).
