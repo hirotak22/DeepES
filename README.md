@@ -20,7 +20,7 @@ conda activate deepes
 ```
 
 ## Pretrained parameters
-The model weights are available at [Zotero](https://doi.org/10.5281/zenodo.11123900).
+The model weights are available at [Zenodo](https://doi.org/10.5281/zenodo.11123900).
 Please download files and unzip.
 
 ## Program Usage
